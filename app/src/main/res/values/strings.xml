@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">smartPosExtDemo</string>
+    <string name="_100">100</string>
+    <string name="enter_amount_kobo">Enter amount (kobo)</string>
+</resources>
