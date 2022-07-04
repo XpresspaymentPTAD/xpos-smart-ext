@@ -1,6 +1,6 @@
 ## XpostSmart Extension Android
 
-This is a demo for easy integration of [Xpresspayments](https://https://www.xpresspayments.com.com) Ssmart POS application with your our supported terminals.
+This is a demo for easy integration of [Xpresspayments](https://https://www.xpresspayments.com.com) Xsmart POS application with your our supported terminals.
 
 ## Get Started
 
