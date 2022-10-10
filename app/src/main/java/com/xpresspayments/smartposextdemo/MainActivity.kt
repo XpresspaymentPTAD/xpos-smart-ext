@@ -18,6 +18,11 @@ class MainActivity : AppCompatActivity() {
             //done printing
         }
 
+    private val reportLauncher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            //done printing
+        }
+
     private val transactionLauncher =
         registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
             printTransaction(it)
@@ -32,6 +37,31 @@ class MainActivity : AppCompatActivity() {
             val amount = edAmount.text.toString().toLongOrNull()
             startTransaction(amount)
         }
+
+        findViewById<Button>(R.id.pay_print).setOnClickListener {
+            printSample()
+        }
+        findViewById<Button>(R.id.eod).setOnClickListener {
+            report()
+        }
+    }
+
+    private fun printSample() {
+        val map = linkedMapOf<String, String>()
+        map["Section 1"] = "M?1"
+        map["Field 1"] = "one"
+        map["Field 2"] = "two"
+        map["Section 2"] = "M?2"
+        map["Field 3"] = "three"
+        map["Field 4"] = "four"
+        map["Section 3"] = "M?3"
+        map["Field 5"] = "Five"
+        map["Field 6"] = "Six"
+        XpressSmartPos.launchPrint(this, makePrintLauncher, null, map)
+    }
+
+    private fun report(){
+        XpressSmartPos.launchReport(this, reportLauncher)
     }
 
     private fun startTransaction(amount: Long?) {
