@@ -57,3 +57,24 @@ private fun printTransaction(response: XTransaction) {
     }
 
 ```
+
+or you print dynamically, It is important to use LinkedMap to print in order as declared.
+you can have single middle field. by declaring the value as either M?
+
+```
+
+private fun printSample() {
+     val map = linkedMapOf<String, String>()
+     map["Section 1"] = "M?"
+     map["Field 1"] = "one"
+     map["Field 2"] = "two"
+     map["Section 2"] = "M?"
+     map["Field 3"] = "three"
+     map["Field 4"] = "four"
+     map["Section 3"] = "M?"
+     map["Field 5"] = "Five"
+     map["Field 6"] = "Six"
+  XpressSmartPos.launchPrint(this, makePrintLauncher, null, map)
+}
+
+```
